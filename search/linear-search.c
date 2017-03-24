@@ -16,18 +16,21 @@ int main () {
     printf("Choose a number and I'll say if it's on the array: ");
     scanf("%i", &chosenOne);
 
-    for (int i = 0; i < SIZE; i++) {
-        if (chosenOne == numbers[i]) {
-            found = 1;
-            break;
-        }
-    }
-
-    if (found == 1) {
+    if (linearSearch(numbers, SIZE, chosenOne) == 1) {
         printf("I found it!\n");
     } else {
         printf("I'm sorry, the number %i is not on the array.\n", chosenOne);
     }
 
     printIntVector(numbers, SIZE);
+}
+
+int linearSearch (int vector[], int vectorSize, int value) {
+    for (int i = 0; i < vectorSize; i++) {
+        if (value == vector[i]) {
+            return 1;
+        }
+    }
+
+    return 0;
 }
