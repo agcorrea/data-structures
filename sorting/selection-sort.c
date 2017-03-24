@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "print-vector.c"
+#include "../commons/print-vector.c"
 
 #define SIZE 10
 
